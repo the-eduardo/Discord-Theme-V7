@@ -246,6 +246,22 @@ span[class*="mention"]:hover:not([class*="mentioned"]) *,
    Rule: yellow background → #0d0221 dark text, no glow, bold.
    ────────────────────────────────────────────────────────────────────── */
 
+/* notification badges (number pill on server icons) */
+[class*="numberBadge__"],
+[class*="textBadge__"],
+[class*="badge__35a7e"],
+[class*="iconBadge__650eb"] {
+  color: #0d0221 !important;
+  text-shadow: none !important;
+  font-weight: 700;
+}
+
+/* home / DM button when selected: swap neon yellow for electric cyan
+   (keeps Edgerunners feel without blinding yellow background) */
+[class*="iconWrapper__6e9f8"][class*="selected__6e9f8"] [class*="childWrapper__6e9f8"] {
+  background-color: #00f0ff !important;
+}
+
 /* APP / bot tag in messages and member list */
 [class*="botTagRegular"],
 [class*="botTagRegular"] *,
