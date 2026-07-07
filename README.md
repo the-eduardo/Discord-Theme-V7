@@ -1,100 +1,130 @@
 [prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
 [prettier-link]: https://github.com/prettier/prettier
-[release-badge]: https://img.shields.io/github/v/release/ClearVision/ClearVision-v7?include_prereleases&style=flat-square
-[release-link]: https://github.com/ClearVision/ClearVision-v7/releases
 [license-badge]: https://img.shields.io/github/license/ClearVision/ClearVision-v7?style=flat-square
 [license-link]: https://github.com/ClearVision/ClearVision-v7/blob/master/LICENSE
-[discord-badge]: https://discord.com/api/guilds/212324635356692500/widget.png?style=shield
-[discord-link]: https://clearvision.github.io/join
-[issues-badge]: https://img.shields.io/github/issues/ClearVision/ClearVision-v7?style=flat-square
-[issues-link]: https://github.com/ClearVision/ClearVision-v7/issues
-[prs-badge]: https://img.shields.io/github/issues-pr/ClearVision/ClearVision-v7?style=flat-square
-[prs-link]: https://github.com/ClearVision/ClearVision-v7/pulls
 [sass-badge]: https://img.shields.io/badge/Sass-CC6699.svg?style=flat-square&logo=sass&logoColor=white
 [sass-link]: https://sass-lang.com/
+[upstream-badge]: https://img.shields.io/badge/upstream-ClearVision--v7-2780e6?style=flat-square
+[upstream-link]: https://github.com/ClearVision/ClearVision-v7
 
 <div align="center">
 
-# ClearVision v7
+# ClearVision V7 — Edgerunners
 
 [![code style: prettier][prettier-badge]][prettier-link]
 [![Language: Sass][sass-badge]][sass-link]
 [![License][license-badge]][license-link]
-[![Discord Server][discord-badge]][discord-link]
-[![Issues][issues-badge]][issues-link]
-[![Pull Requests][prs-badge]][prs-link]
+[![Upstream][upstream-badge]][upstream-link]
 
-![v6 Sapphire](https://raw.githubusercontent.com/ClearVision/ClearVision-v7/refs/heads/master/screenshots/treatment-3.jpg)
+> A fork of [ClearVision V7](https://github.com/ClearVision/ClearVision-v7) rebuilt with the **Cyberpunk Edgerunners** palette.  
+> Night City vibes for your Discord — neon yellow, electric cyan and shock magenta over deep purple.
 
 </div>
 
-### Presets
-List of presets available. All primarily for dark mode
-- Sapphire - Darkish blue | Art: https://www.deviantart.com/kuldarleement/art/Stellar-collision-397866757 ; https://www.deviantart.com/kuldarleement/ ; http://www.kuldarleement.eu/  
-- Ruby - Red | Art: https://www.deviantart.com/artistmef/art/Follow-the-path-279366207 ; https://www.deviantart.com/artistmef/  
-- Amber - Orange | Art: https://www.deviantart.com/chromamancer/art/War-March-201045286 ; https://www.furaffinity.net/view/5408230 ; https://www.furaffinity.net/user/chromamancer/  
-- Emerald - Green | Art: Work from "Guild Wars" or "Guild Wars 2" ; http://www.kekaiart.com/guild-wars-2.html ; http://www.kekaiart.com/uploads/5/4/7/6/5476798/7976137_orig.jpg ; http://www.kekaiart.com/t  
-- Amethyst - Magenta | Art (tinted purple): https://www.deviantart.com/vityar83/art/gulls-149920115 ; https://www.deviantart.com/vityar83  
-- Halloween - Orange, for festivity | Art: https://www.deviantart.com/unidcolor/art/Halloween-2014-491224711 ; https://www.deviantart.com/unidcolor/  
-- Winter - Light blue, for festivity | Art: https://wall.alphacoders.com/big.php?i=114938 ; unknown artist.
+---
 
-Goals:
-- Supports visual refresh - New UI with new chat input & new UI with old chat input
-- Supports both light and dark, along with dark variants
-- Supports saturation setting
-- Uses smallest css target possible
-- Plugin support in extra files for respective client mods
+## What's different from the original
 
-## Theme Editor
+### Color palette
 
-You can enjoy the new theme editor exclusively for ClearVision v7 by [Snow](https://github.com/therealjustsnow)
+| Role | Original ClearVision | This fork |
+|---|---|---|
+| Main accent | `#2780e6` Sapphire blue | `#fcee0a` Neon yellow (David's jacket) |
+| Hover | `#1e63b3` Dark blue | `#00f0ff` Electric cyan (Lucy) |
+| Focus / TAB outline | same as main | `#ff2a6d` Shock magenta |
+| Success / online | `#43b581` Discord green | `#00ff9f` Neon green |
+| Danger / DND | `#982929` Dark red | `#ff003c` Neon red |
+| Streaming | `#593695` Muted purple | `#b026ff` Neon purple |
+| Idle | `#faa61a` Amber | `#fcee0a` Neon yellow |
+| Offline | `#808080` Grey | `#4a4458` Faded chrome purple |
 
-[ClearVisionv7 Theme Editor](https://therealjustsnow.github.io/v7-editor)
+### Background
 
+The default Sapphire wallpaper is replaced with a **Cyberpunk-style city wallpaper** (`wallhaven-571998`).  
+You can swap it back or use any HTTPS image by overriding `--background-image` in Custom CSS.
+
+### Typography
+
+The font stack is prefixed with **Rajdhani** (imported from Google Fonts), a geometric sans-serif with a futuristic / military-HUD look. Falls back to `gg sans` and system fonts as usual.
+
+### Theme shading
+
+All four Discord variants (Light / Ash / Dark / Onyx) use **Night City purple shading** (`#0d0221` family) instead of plain black overlays, so the background always reads as deep-space purple rather than generic dark.
+
+### Readability fixes (not in upstream)
+
+The original theme places light/white text on the neon yellow accent — which is unreadable at high contrast. Every yellow surface in this fork has been corrected:
+
+| Element | Fix |
+|---|---|
+| Selected channel / DM | Dark text `#0d0221` on yellow bar |
+| @user mention chip | Solid yellow pill, dark text; cyan on hover |
+| @role / @everyone mention chip | Same — uses a different class from @user, both covered |
+| "NEW UNREADS" bar in channel list | Dark text on yellow strip, both new and old bar styles |
+| "new messages" bar at top of chat | Dark text |
+| APP / bot tags | Dark text on yellow pill |
+| Filled primary buttons (Edit Channel, Invite, confirmations, command buttons) | Dark text |
+| Settings sidebar — selected item | Dark text |
+| Mentioned message row | Subtle 7% yellow tint + red alert bar (no blown-out highlight) |
+
+---
 
 ## Installing
 
-Note: ClearVision doesn't actively support plugins (as in, we don't seek out and actively theme fixes to every new plugin). However, when a plugin is widely used, we try our best to stay compatible.
-
-**For BD and Vencord:**
-
-Download the theme file from [our official support server](https://clearvision.github.io/join), [the BetterDiscord Website](https://betterdiscord.app/theme/ClearVision) or [releases](https://github.com/ClearVision/ClearVision-v6/releases) and move it into your injector's themes folder:
-
-- BetterDiscord: `%appdata%\betterdiscord\themes`
-- Vencord: `%appdata%\vencord\themes`
-
-**For using the theme online:**
-
-There are multiple ways to do this if your client offers using an online version. The suggested two are `https://clearvision.github.io/ClearVision-v7/main.css` or `https://raw.githubusercontent.com/ClearVision/ClearVision-v7/master/ClearVision-v7.theme.css`
-
-For customizing the theme from there, you'll want to use custom css and add any variables you'd like to change. It should look something like this:
-
+**BetterDiscord**  
+Download [`ClearVision-v7-BetterDiscord.theme.css`](ClearVision-v7-BetterDiscord.theme.css) and drop it into:
 ```
+%appdata%\betterdiscord\themes
+```
+
+**Vencord**  
+Download [`ClearVision-v7-Vencord.css`](ClearVision-v7-Vencord.css) and drop it into:
+```
+%appdata%\vencord\themes
+```
+
+**Both (generic)**  
+[`ClearVision-v7.theme.css`](ClearVision-v7.theme.css) includes both the BetterDiscord and Vencord import lines.
+
+---
+
+## Customizing
+
+All variables are in the `:root` block at the top of the theme file. Common overrides via Custom CSS:
+
+```css
 :root {
-	--main-color: red;
-	--hover-color: yellow;
+  /* swap wallpaper for your own (must be HTTPS) */
+  --background-image: url(https://example.com/your-wallpaper.jpg);
+
+  /* change the neon yellow to something else */
+  --main-color: #ff2a6d;
+  --hover-color: #b026ff;
+
+  /* widen or narrow the channel list */
+  --channels-width: 240px;
 }
 ```
 
-## Building from source
+The gradient fallback (no image) is:
+```css
+--background-image: linear-gradient(135deg, #0d0221 0%, #1a0b2e 35%, #240b36 60%, #10021f 100%);
+```
 
-To build the theme from source, first install npm from the dependencies below, then you can run `pnpm install` to install all missing dependencies and `pnpm run build` to compile the theme into the `/public` folder.
+---
 
-### Dependencies
+## Note on class-name hashes
 
-- [NodeJS/npm](https://nodejs.org/)
-- [pnpm](https://www.npmjs.com/package/pnpm)
-- [sass](https://www.npmjs.com/package/sass)
-- [PostCSS Autoprefixer](https://www.npmjs.com/package/autoprefixer)
-- [PostCSS CLI](https://www.npmjs.com/package/postcss-cli)
+Discord and ClearVision use hashed class names (`lookFilled__201d5`, `active_caf372`, etc.).  
+These can change when Discord updates. If a fix regresses after a Discord update, the current class names can be found in [`src/backend/_classes.scss`](src/backend/_classes.scss).
 
-## Contributing
+---
 
-Run `pnpm run test` to compile the theme.
+## Credits
 
-The `main.css` file builds to the `/test` directory, which can then be copied into your client mod's Custom CSS or placed in the themes folder and enabled in settings. Just make sure any other themes are disabled for testing.
+- **[ClearVision Team](https://github.com/ClearVision/ClearVision-v7)** — original theme architecture and SCSS
+- **[the-eduardo](https://github.com/the-eduardo)** — Edgerunners palette, readability overrides, and this fork
+- Palette inspired by **Cyberpunk Edgerunners** (Netflix / Studio Trigger / CD Projekt Red)
+- Wallpaper: [wallhaven-571998](https://wallhaven.cc/w/571998)
 
-## Support
-[Join our discord server](https://discord.gg/dHaSxn3) and post in our support channel if you need additional help!
-
-<small>_If you feel you have been unfairly punished, you can [join the appeal server](https://discord.gg/Yz7tkHbpcv). Note that if your appeal has been denied, you will not be able to join._</small>
+Licensed under the same terms as the upstream project. See [LICENSE](LICENSE).
