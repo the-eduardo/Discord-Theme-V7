@@ -188,6 +188,35 @@ a:hover {
   font-weight: 600;
 }
 
+/* role/@everyone mention chips use a different wrapper class than @user mentions —
+   same treatment: solid yellow pill, DARK text, cyan on hover */
+[class*="wrapper_f61d60"],
+[class*="wrapper_f61d60"] * {
+  background-color: #fcee0a !important;
+  color: #0d0221 !important;
+  text-shadow: none !important;
+  font-weight: 600;
+}
+[class*="wrapper_f61d60"]:hover,
+[class*="wrapper_f61d60"]:hover * {
+  background-color: #00f0ff !important;
+  color: #0d0221 !important;
+}
+
+/* "NEW UNREADS" / mentions bars in the channel list (new + old style):
+   ClearVision forces white text here with !important — override with dark letters */
+[class*="barText__"],
+[class*="barText__"] *,
+[class*="unreadIcon__"],
+[class*="text__3b95d"],
+[class*="icon_edf32f"],
+[class*="mention__3b95d"],
+[class*="unreadMentionsIndicator"] * {
+  color: #0d0221 !important;
+  text-shadow: none !important;
+  font-weight: 600;
+}
+
 /* scrollbar thumb — neon yellow */
 ::-webkit-scrollbar-thumb {
   background-color: rgba(252, 238, 10, 0.4) !important;
