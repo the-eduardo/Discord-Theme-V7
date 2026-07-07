@@ -1,63 +1,65 @@
 /**
- * @name ClearVision V7 for BetterDiscord
- * @author ClearVision Team
+ * @name ClearVision V7 Edgerunners for BetterDiscord
+ * @author the-eduardo & ClearVision Team
  * @version 7.0.1
- * @description Highly customizable theme for BetterDiscord.
- * @source https://github.com/ClearVision/ClearVision-v7
+ * @description ClearVision V7 rebuilt with a Cyberpunk Edgerunners palette — neon yellow, electric cyan and shock magenta over deep Night City purple.
+ * @source https://github.com/the-eduardo/Discord-Theme-V7
  * @website https://clearvision.github.io
  * @invite dHaSxn3
  */
 /* IMPORT CSS */
 @import url("https://clearvision.github.io/ClearVision-v7/main.css");
 @import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
+/* CYBERPUNK FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap");
 /* SETTINGS */
 :root {
   /* ACCENT COLORS */
-  --main-color: #2780e6; /* main accent color (hex, rgb or hsl) [default: #2780e6] */
-  --hover-color: #1e63b3; /* hover accent color (hex, rgb or hsl) [default: #1e63b3] */
-  --success-color: #43b581; /* positive accent color (hex, rgb or hsl) [default: #43b581] */
-  --danger-color: #982929; /* danger accent color (hex, rgb or hsl) [default: #982929] */
+  --main-color: #fcee0a; /* main accent color — Edgerunners neon yellow (hex, rgb or hsl) [default: #2780e6] */
+  --hover-color: #00f0ff; /* hover accent color — electric cyan (hex, rgb or hsl) [default: #1e63b3] */
+  --success-color: #00ff9f; /* positive accent color — neon green (hex, rgb or hsl) [default: #43b581] */
+  --danger-color: #ff003c; /* danger accent color — neon red (hex, rgb or hsl) [default: #982929] */
   /* STATUS COLORS */
-  --online-color: #43b581; /* online status color (hex, rgb or hsl) [default: #43b581] */
-  --idle-color: #faa61a; /* idle status color (hex, rgb or hsl) [default: #faa61a] */
-  --dnd-color: #982929; /* dnd status color (hex, rgb or hsl) [default: #982929] */
-  --streaming-color: #593695; /* streaming status color (hex, rgb or hsl) [default: #593695] */
-  --offline-color: #808080; /* offline/invisible status color (hex, rgb or hsl) [default: #808080] */
+  --online-color: #00ff9f; /* online status color — neon green (hex, rgb or hsl) [default: #43b581] */
+  --idle-color: #fcee0a; /* idle status color — neon yellow (hex, rgb or hsl) [default: #faa61a] */
+  --dnd-color: #ff003c; /* dnd status color — neon red (hex, rgb or hsl) [default: #982929] */
+  --streaming-color: #b026ff; /* streaming status color — neon purple (hex, rgb or hsl) [default: #593695] */
+  --offline-color: #4a4458; /* offline/invisible status color — faded chrome purple (hex, rgb or hsl) [default: #808080] */
   /* APP BACKGROUND */
   --background-shading-percent: 100%; /* app background shading amount (0 for complete smoothness) [default: 100%] */
-  --background-image: url(https://clearvision.github.io/images/sapphire.jpg); /* app background image (link must be HTTPS) [default: url(https://clearvision.github.io/images/sapphire.jpg)]*/
+  --background-image: linear-gradient(135deg, #0d0221 0%, #1a0b2e 35%, #240b36 60%, #10021f 100%); /* app background — deep Night City purple gradient (swap for an HTTPS image if you want wallpaper) [default: url(https://clearvision.github.io/images/sapphire.jpg)] */
   --background-position: center; /* app background position [default: center] */
   --background-size: cover; /* app background size (px) [default: cover] */
   --background-attachment: fixed; /* app background attachment [default: fixed] */
-  --background-filter: saturate(calc(var(--saturation-factor, 1) * 1)); /* app background adjustments (ex: blur, saturation, brightness) (more info: https://developer.mozilla.org/en-US/docs/Web/CSS/filter) [default: saturate(calc(var(--saturation-factor, 1) * 1))] */
+  --background-filter: saturate(calc(var(--saturation-factor, 1) * 1.1)); /* app background adjustments (ex: blur, saturation, brightness) [default: saturate(calc(var(--saturation-factor, 1) * 1))] */
   /* USER POPOUT BACKGROUND */
   --user-popout-image: var(--background-image); /* user popout background image (link must be HTTPS) (not applied to nitro users) [default: var(--background-image)] */
   --user-popout-position: var(--background-position); /* user popout position [default: var(--background-position)] */
   --user-popout-size: var(--background-size); /* user popout size (px) [default: var(--background-size)] */
   --user-popout-attachment: var(--background-attachment); /* user popout background attachment [default: var(--background-attachment)] */
-  --user-popout-filter: var(--background-filter); /* user popout background adjustments (ex: blur, saturation, brightness) (more info: https://developer.mozilla.org/en-US/docs/Web/CSS/filter) [default: var(--background-filter);] */
+  --user-popout-filter: var(--background-filter); /* user popout background adjustments [default: var(--background-filter);] */
   /* USER MODAL BACKGROUND */
   --user-modal-image: var(--background-image); /* user modal background image (link must be HTTPS) (not applied to nitro users) [default: var(--background-image)] */
   --user-modal-position: var(--background-position); /* user modal position [default: var(--background-position)] */
   --user-modal-size: var(--background-size); /* user modal size (px) [default: var(--background-size)] */
   --user-modal-attachment: var(--background-attachment); /* user modal background attachment [default: var(--background-attachment)] */
-  --user-modal-filter: var(--background-filter); /* user modal background adjustments (ex: blur, saturation, brightness) (more info: https://developer.mozilla.org/en-US/docs/Web/CSS/filter) [default: var(--background-filter);] */
+  --user-modal-filter: var(--background-filter); /* user modal background adjustments [default: var(--background-filter);] */
   /* HOME ICON */
-  --home-icon: url(https://clearvision.github.io/icons/discord.svg); /* home button icon (link must be HTTPS) [default: url(https://clearvision.github.io/icons/discord.svg)]*/
-  --home-size: cover; /* home button icon size (px) [default:cover] */
+  --home-icon: url(https://clearvision.github.io/icons/discord.svg); /* home button icon (link must be HTTPS) [default: url(https://clearvision.github.io/icons/discord.svg)] */
+  --home-size: cover; /* home button icon size (px) [default: cover] */
   /* FONTS */
-  --main-font: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif; /* main font for app (font must be installed) [default: gg sans, Helvetica Neue, Helvetica, Arial, sans-serif] */
+  --main-font: Rajdhani, "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif; /* main font for app (Rajdhani imported above) [default: gg sans, Helvetica Neue, Helvetica, Arial, sans-serif] */
   --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, Courier, monospace; /* font for codeblocks (font must be installed) [default: Consolas, Liberation Mono, Menlo, Courier, monospace] */
   /* CHANNEL COLORS */
-  --channel-normal: var(--interactive-text-default); /* channel text color [default: var(--interactive-text-default)] */
-  --channel-muted: var(--interactive-muted); /* muted channel text color [default: var(--interactive-muted)] */
-  --channel-hover: var(--interactive-text-hover); /* hovered channel text color [default: var(--interactive-text-hover)] */
-  --channel-selected: var(--interactive-text-active); /* selected channel text color [default: var(--interactive-text-active)] */
-  --channel-selected-bg: var(--main-color); /* selected channel background [default: var(--main-color)] */
-  --channel-unread: var(--main-color); /* unread channel text color [default: var(--main-color)] */
-  --channel-unread-hover: var(--hover-color); /* unread channel hover color [default: var(--hover-color)] */
+  --channel-normal: rgba(0, 240, 255, 0.55); /* channel text color — dimmed cyan [default: var(--interactive-text-default)] */
+  --channel-muted: rgba(122, 122, 140, 0.5); /* muted channel text color [default: var(--interactive-muted)] */
+  --channel-hover: rgba(0, 240, 255, 0.95); /* hovered channel text color — bright cyan [default: var(--interactive-text-hover)] */
+  --channel-selected: #0d0221; /* selected channel text color — DARK on neon yellow for readability (CP2077 style) [default: var(--interactive-text-active)] */
+  --channel-selected-bg: var(--main-color); /* selected channel background — neon yellow [default: var(--main-color)] */
+  --channel-unread: var(--main-color); /* unread channel text color — neon yellow [default: var(--main-color)] */
+  --channel-unread-hover: var(--hover-color); /* unread channel hover color — electric cyan [default: var(--hover-color)] */
   /* ACCESSIBILITY */
-  --focus-color: var(--main-color); /* outline when pressing TAB key [default: var(--main-color)] */
+  --focus-color: #ff2a6d; /* outline when pressing TAB key — shock magenta [default: var(--main-color)] */
 }
 
 /* THEME SPECIFIC SHADING */
@@ -74,35 +76,89 @@
 
 /* ASH THEME */
 :is(.theme-dark, .theme-light .theme-dark) {
-  --background-shading: rgba(0, 0, 0, 0.4); /* app background shading color [default: rgba(0, 0, 0, 0.4)] */
-  --card-shading: rgba(0, 0, 0, 0.2); /* cards background shading color [default: rgba(0, 0, 0, 0.2)] */
-  --popout-shading: rgba(0, 0, 0, 0.6); /* popouts background shading color [default: rgba(0, 0, 0, 0.6)] */
-  --modal-shading: rgba(0, 0, 0, 0.4); /* modals background shading color [default: rgba(0, 0, 0, 0.4)] */
-  --input-shading: rgba(255, 255, 255, 0.05); /* inputs background shading color [default: rgba(255, 255, 255, 0.05)] */
-  --normal-text: #d8d8db; /* text color [default: #d8d8db] */
-  --muted-text: #aeaeb4; /* muted text color [default: #aeaeb4] */
+  --background-shading: rgba(13, 2, 33, 0.45); /* app background shading color — Night City haze [default: rgba(0, 0, 0, 0.4)] */
+  --card-shading: rgba(13, 2, 33, 0.25); /* cards background shading color [default: rgba(0, 0, 0, 0.2)] */
+  --popout-shading: rgba(13, 2, 33, 0.65); /* popouts background shading color [default: rgba(0, 0, 0, 0.6)] */
+  --modal-shading: rgba(13, 2, 33, 0.45); /* modals background shading color [default: rgba(0, 0, 0, 0.4)] */
+  --input-shading: rgba(0, 240, 255, 0.05); /* inputs background shading color — faint cyan [default: rgba(255, 255, 255, 0.05)] */
+  --normal-text: #e6f4ff; /* text color — cool chrome white [default: #d8d8db] */
+  --muted-text: #8a8a9e; /* muted text color [default: #aeaeb4] */
 }
 
 /* DARK THEME */
 :is(.theme-darker, .theme-light .theme-darker) {
-  --background-shading: rgba(0, 0, 0, 0.6); /* app background shading color [default: rgba(0, 0, 0, 0.6)] */
-  --card-shading: rgba(0, 0, 0, 0.3); /* cards background shading color [default: rgba(0, 0, 0, 0.3)] */
-  --popout-shading: rgba(0, 0, 0, 0.7); /* popouts background shading color [default: rgba(0, 0, 0, 0.7)] */
-  --modal-shading: rgba(0, 0, 0, 0.5); /* modals background shading color [default: rgba(0, 0, 0, 0.6)] */
-  --input-shading: rgba(255, 255, 255, 0.05); /* inputs background shading color [default: rgba(255, 255, 255, 0.05)] */
-  --normal-text: #fbfbfb; /* text color [default: #fbfbfb] */
-  --muted-text: #94949c; /* muted text color [default: #94949c] */
+  --background-shading: rgba(13, 2, 33, 0.65); /* app background shading color — Night City haze [default: rgba(0, 0, 0, 0.6)] */
+  --card-shading: rgba(13, 2, 33, 0.35); /* cards background shading color [default: rgba(0, 0, 0, 0.3)] */
+  --popout-shading: rgba(13, 2, 33, 0.75); /* popouts background shading color [default: rgba(0, 0, 0, 0.7)] */
+  --modal-shading: rgba(13, 2, 33, 0.55); /* modals background shading color [default: rgba(0, 0, 0, 0.6)] */
+  --input-shading: rgba(0, 240, 255, 0.05); /* inputs background shading color — faint cyan [default: rgba(255, 255, 255, 0.05)] */
+  --normal-text: #f5faff; /* text color — cool chrome white [default: #fbfbfb] */
+  --muted-text: #8a8a9e; /* muted text color [default: #94949c] */
 }
 
 /* ONYX THEME */
 :is(.theme-midnight, .theme-light .theme-midnight) {
-  --background-shading: rgba(0, 0, 0, 0.8); /* app background shading color [default: rgba(0, 0, 0, 0.8)] */
-  --card-shading: rgba(0, 0, 0, 0.4); /* cards background shading color [default: rgba(0, 0, 0, 0.4)] */
-  --popout-shading: rgba(0, 0, 0, 0.8); /* popouts background shading color [default: rgba(0, 0, 0, 0.8)] */
-  --modal-shading: rgba(0, 0, 0, 0.6); /* modals background shading color [default: rgba(0, 0, 0, 0.6)] */
-  --input-shading: rgba(255, 255, 255, 0.05); /* inputs background shading color [default: rgba(255, 255, 255, 0.05)] */
-  --normal-text: #dcdcde; /* text color [default: #dcdcde] */
-  --muted-text: #86868e; /* muted text color [default: #86868e] */
+  --background-shading: rgba(6, 1, 16, 0.85); /* app background shading color — deepest Night City [default: rgba(0, 0, 0, 0.8)] */
+  --card-shading: rgba(6, 1, 16, 0.45); /* cards background shading color [default: rgba(0, 0, 0, 0.4)] */
+  --popout-shading: rgba(6, 1, 16, 0.85); /* popouts background shading color [default: rgba(0, 0, 0, 0.8)] */
+  --modal-shading: rgba(6, 1, 16, 0.65); /* modals background shading color [default: rgba(0, 0, 0, 0.6)] */
+  --input-shading: rgba(0, 240, 255, 0.05); /* inputs background shading color — faint cyan [default: rgba(255, 255, 255, 0.05)] */
+  --normal-text: #dcecf5; /* text color [default: #dcdcde] */
+  --muted-text: #7c7c92; /* muted text color [default: #86868e] */
 }
 
 /* ADD ADDITIONAL CSS BELOW HERE */
+
+/* ============================================================
+   CYBERPUNK EDGERUNNERS EXTRAS
+   Neon glow and Night City details on top of the ClearVision
+   base. Delete this block for a "flat" look.
+   ============================================================ */
+
+/* neon text selection — shock magenta */
+::selection {
+  background: rgba(255, 42, 109, 0.45);
+  color: #fff;
+}
+
+/* links glow like neon signs */
+a {
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.55);
+}
+a:hover {
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.9);
+}
+
+/* unread channels get the yellow neon buzz (NOT selected ones — those are dark-on-yellow for readability) */
+[class*="modeUnread"] [class*="name"] {
+  text-shadow: 0 0 10px rgba(252, 238, 10, 0.6);
+}
+
+/* selected channel/DM: kill any glow and force dark readable text on the neon yellow bar */
+[class*="modeSelected"] [class*="name"],
+[class*="modeSelected"] [class*="channelName"],
+[class*="selected"][class*="interactive"] [class*="name"],
+[class*="selected"][class*="interactive"] [class*="username"],
+[class*="selected"][class*="interactive"] [class*="activityText"],
+[class*="selected"][class*="interactive"] [class*="subtext"] {
+  color: #0d0221 !important;
+  text-shadow: none !important;
+  font-weight: 600;
+}
+[class*="modeSelected"] [class*="icon"],
+[class*="selected"][class*="interactive"] svg {
+  color: #0d0221 !important;
+}
+
+/* mentions pulse like a cyberware alert */
+[class*="mentioned"] {
+  box-shadow: inset 4px 0 0 var(--danger-color);
+}
+
+/* scrollbar thumb — neon yellow */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(252, 238, 10, 0.4) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(252, 238, 10, 0.7) !important;
+}
