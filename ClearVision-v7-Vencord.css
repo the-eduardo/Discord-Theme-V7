@@ -256,10 +256,18 @@ span[class*="mention"]:hover:not([class*="mentioned"]) *,
 }
 
 /* home / DM button when selected: swap neon yellow for electric cyan
-   (keeps Edgerunners feel without blinding yellow background)
-   iconWrapper class = wrapper__6e9f8, homeWrapper = childWrapper__6e9f8 */
+   (keeps Edgerunners feel without blinding yellow background).
+   Two layers of defense:
+   1. structural override of ClearVision's own rule
+      (.wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8);
+   2. re-pin --hsl-main-color on the element itself, so ClearVision's
+      background-color: var(--hsl-main-color) resolves to cyan even if
+      the ancestor classes change in a future Discord update. */
 [class*="wrapper__6e9f8"][class*="selected__6e9f8"] [class*="childWrapper__6e9f8"] {
   background-color: #00f0ff !important;
+}
+[class*="childWrapper__"] {
+  --hsl-main-color: #00f0ff;
 }
 
 /* APP / bot tag in messages and member list */
