@@ -256,8 +256,9 @@ span[class*="mention"]:hover:not([class*="mentioned"]) *,
 }
 
 /* home / DM button when selected: swap neon yellow for electric cyan
-   (keeps Edgerunners feel without blinding yellow background) */
-[class*="iconWrapper__6e9f8"][class*="selected__6e9f8"] [class*="childWrapper__6e9f8"] {
+   (keeps Edgerunners feel without blinding yellow background)
+   iconWrapper class = wrapper__6e9f8, homeWrapper = childWrapper__6e9f8 */
+[class*="wrapper__6e9f8"][class*="selected__6e9f8"] [class*="childWrapper__6e9f8"] {
   background-color: #00f0ff !important;
 }
 
