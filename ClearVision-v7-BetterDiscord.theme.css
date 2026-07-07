@@ -155,6 +155,22 @@ a:hover {
   box-shadow: inset 4px 0 0 var(--danger-color);
 }
 
+/* mention chips (@user / @role / @everyone): translucent neon chip with clean yellow text —
+   replaces the solid yellow pill + glowing light text that was unreadable */
+.mention {
+  background: rgba(252, 238, 10, 0.12) !important;
+  color: #fcee0a !important;
+  text-shadow: none !important;
+  box-shadow: inset 0 0 0 1px rgba(252, 238, 10, 0.45);
+  border-radius: 4px;
+  font-weight: 600;
+}
+.mention:hover {
+  background: #fcee0a !important;
+  color: #0d0221 !important;
+  text-shadow: none !important;
+}
+
 /* scrollbar thumb — neon yellow */
 ::-webkit-scrollbar-thumb {
   background-color: rgba(252, 238, 10, 0.4) !important;
