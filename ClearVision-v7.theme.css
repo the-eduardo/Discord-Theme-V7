@@ -28,7 +28,7 @@
   --offline-color: #4a4458; /* offline/invisible status color — faded chrome purple (hex, rgb or hsl) [default: #808080] */
   /* APP BACKGROUND */
   --background-shading-percent: 100%; /* app background shading amount (0 for complete smoothness) [default: 100%] */
-  --background-image: linear-gradient(135deg, #0d0221 0%, #1a0b2e 35%, #240b36 60%, #10021f 100%); /* app background — deep Night City purple gradient (swap for an HTTPS image if you want wallpaper) [default: url(https://clearvision.github.io/images/sapphire.jpg)] */
+  --background-image: url(https://w.wallhaven.cc/full/57/wallhaven-571998.png); /* app background — Night City wallpaper (fallback gradient: linear-gradient(135deg, #0d0221 0%, #1a0b2e 35%, #240b36 60%, #10021f 100%)) [default: url(https://clearvision.github.io/images/sapphire.jpg)] */
   --background-position: center; /* app background position [default: center] */
   --background-size: cover; /* app background size (px) [default: cover] */
   --background-attachment: fixed; /* app background attachment [default: fixed] */
@@ -189,8 +189,14 @@ a:hover {
   font-weight: 600;
 }
 
-/* role/@everyone mention chips use a different wrapper class than @user mentions —
-   same treatment: solid yellow pill, DARK text, cyan on hover */
+/* role/@everyone/command mention chips — every variant, hash-proof net:
+   solid yellow pill, DARK text always, cyan on hover */
+span[class*="mention"]:not([class*="mentioned"]),
+span[class*="mention"]:not([class*="mentioned"]) *,
+span[class*="Mention"],
+span[class*="Mention"] *,
+[class*="roleMention"],
+[class*="roleMention"] *,
 [class*="wrapper_f61d60"],
 [class*="wrapper_f61d60"] * {
   background-color: #fcee0a !important;
@@ -198,6 +204,8 @@ a:hover {
   text-shadow: none !important;
   font-weight: 600;
 }
+span[class*="mention"]:hover:not([class*="mentioned"]),
+span[class*="mention"]:hover:not([class*="mentioned"]) *,
 [class*="wrapper_f61d60"]:hover,
 [class*="wrapper_f61d60"]:hover * {
   background-color: #00f0ff !important;
@@ -206,9 +214,13 @@ a:hover {
 
 /* "NEW UNREADS" / mentions bars in the channel list (new + old style):
    ClearVision forces white text here with !important — override with dark letters */
-[class*="barText__"],
-[class*="barText__"] *,
-[class*="unreadIcon__"],
+[class*="barText"],
+[class*="barText"] *,
+[class*="unreadIcon"],
+[class*="bar__7aaec"] *,
+[class*="mentionsBar__"] *,
+[class*="bar__3b95d"] *,
+[class*="container__3b95d"] *,
 [class*="text__3b95d"],
 [class*="icon_edf32f"],
 [class*="mention__3b95d"],
