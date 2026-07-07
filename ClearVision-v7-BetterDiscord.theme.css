@@ -236,3 +236,51 @@ span[class*="mention"]:hover:not([class*="mentioned"]) *,
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(252, 238, 10, 0.7) !important;
 }
+
+/* ─────────────────────────────────────────────────────────────────────
+   DARK TEXT ON NEON YELLOW — global rule for every filled yellow surface
+   Covers: channel-action icon buttons, APP/bot tags, filled primary
+   buttons (lookFilled + colorBrand/Primary, new-style primary_a22cb0),
+   settings sidebar selected items, and message/interaction command buttons.
+   Rule: yellow background → #0d0221 dark text, no glow, bold.
+   ────────────────────────────────────────────────────────────────────── */
+
+/* APP / bot tag in messages and member list */
+[class*="botTagRegular"],
+[class*="botTagRegular"] *,
+[class*="botTag__0a06e"],
+[class*="botTag__0a06e"] * {
+  background-color: #fcee0a !important;
+  color: #0d0221 !important;
+  text-shadow: none !important;
+  font-weight: 700;
+}
+
+/* filled primary/brand buttons (Edit Channel, Invite, confirmations, etc.)
+   and the "new" button style (primary_a22cb0) */
+[class*="lookFilled__201d5"][class*="colorBrand__201d5"],
+[class*="lookFilled__201d5"][class*="colorBrand__201d5"] *,
+[class*="lookFilled__201d5"][class*="colorPrimary__201d5"],
+[class*="lookFilled__201d5"][class*="colorPrimary__201d5"] *,
+[class*="primary_a22cb0"],
+[class*="primary_a22cb0"] * {
+  color: #0d0221 !important;
+  text-shadow: none !important;
+}
+
+/* channel action icon buttons shown on hover over a selected channel
+   (Edit Channel ✏️, Invite ➕ icons) */
+[class*="channelActions_e4503a"] [class*="iconButton"],
+[class*="channelActions_e4503a"] [class*="iconButton"] svg,
+[class*="channelActions_e4503a"] [class*="iconButton"] * {
+  color: #0d0221 !important;
+  text-shadow: none !important;
+}
+
+/* settings sidebar — selected / active item */
+[class*="active_caf372"],
+[class*="active_caf372"] * {
+  color: #0d0221 !important;
+  text-shadow: none !important;
+  font-weight: 600;
+}
