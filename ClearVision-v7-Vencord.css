@@ -150,10 +150,10 @@ a:hover {
   color: #0d0221 !important;
 }
 
-/* mentioned message row: subtle yellow tint (not the blown-out solid yellow) + red alert bar */
+/* mentioned message row: subtle yellow tint + neon yellow left bar */
 [class*="mentioned"] {
   background: rgba(252, 238, 10, 0.07) !important;
-  box-shadow: inset 4px 0 0 var(--danger-color);
+  box-shadow: inset 4px 0 0 var(--main-color);
 }
 [class*="mentioned"]:hover {
   background: rgba(252, 238, 10, 0.12) !important;
