@@ -309,3 +309,12 @@ span[class*="mention"]:hover:not([class*="mentioned"]) *,
   text-shadow: none !important;
   font-weight: 600;
 }
+
+/* non-Nitro profile banner — blur glassmorphism (sem Nitro = banner transparente fica escurecido + desfocado) */
+.user-profile-popout:not(.custom-user-profile-theme) [class*="banner"],
+.user-profile-modal:not(.custom-user-profile-theme) [class*="banner"],
+.user-profile-modal-v2:not(.custom-user-profile-theme) [class*="banner"] {
+  backdrop-filter: blur(16px) brightness(0.55) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) brightness(0.55) saturate(1.4);
+  background: rgba(13, 2, 33, 0.3) !important;
+}
